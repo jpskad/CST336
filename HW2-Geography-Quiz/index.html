@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>US Geography Quiz</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script> 
+</head>
+<body class="assignment-main">
+
+    <div class="assignment-card quiz-shell">
+        <h1 class="p-4 quiz-title text-center"> US Geography Quiz </h1>
+        <div id="totalAttempts" class="text-end fw-bold p-2"></div>
+
+        <div class="question-block">
+            <h3><span id="markImg1"></span> 1. What is the capital of California?</h3>
+            <input type="text" id="q1" class="form-control w-50">
+            <div id="q1Feedback" class="feedback-slot"></div>
+        </div>
+
+        <div class="question-block">
+            <h3><span id="markImg2"></span> 2. What is the longest river in the US?</h3>
+            <select id="q2" class="form-select w-50">
+                <option value="">Select One</option>
+                <option value="ms">Mississippi</option>
+                <option value="mo">Missouri</option>
+                <option value="co">Colorado</option>
+            </select>
+            <div id="q2Feedback" class="feedback-slot"></div>
+        </div>
+
+        <div class="question-block">
+            <h3><span id="markImg3"></span> 3. Which presidents are on Mt. Rushmore?</h3>
+            <div class="form-check">
+                <input type="checkbox" id="Jackson" class="form-check-input"> <label class="form-check-label" for="Jackson">A. Jackson</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="Jefferson" class="form-check-input"> <label class="form-check-label" for="Jefferson">T. Jefferson</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="Roosevelt" class="form-check-input"> <label class="form-check-label" for="Roosevelt">T. Roosevelt</label>
+            </div>
+            <div id="q3Feedback" class="feedback-slot"></div>
+        </div>
+
+        <div class="question-block">
+            <h3><span id="markImg4"></span> 4. What is the smallest US State?</h3>
+            <div id="q4Choices" class="choices-row"></div>
+            <div id="q4Feedback" class="feedback-slot"></div>
+        </div>
+
+        <div class="question-block">
+            <h3><span id="markImg5"></span> 5. In which state is the Grand Canyon located?</h3>
+            <input type="text" id="q5" class="form-control w-50">
+            <div id="q5Feedback" class="feedback-slot"></div>
+        </div>
+
+        <div class="question-block">
+            <h3><span id="markImg6"></span> 6. Which state is known as the "Sunshine State"?</h3>
+            <select id="q6" class="form-select w-50">
+                <option value="">Select One</option>
+                <option value="ca">California</option>
+                <option value="fl">Florida</option>
+                <option value="ga">Georgia</option>
+            </select>
+            <div id="q6Feedback" class="feedback-slot"></div>
+        </div>
+
+        <div class="question-block">
+            <h3><span id="markImg7"></span> 7. Which Great Lake is the largest by surface area?</h3>
+            <input type="radio" name="q7" id="superior" value="Superior"> <label for="superior">Lake Superior</label><br>
+            <input type="radio" name="q7" id="michigan" value="Michigan"> <label for="michigan">Lake Michigan</label>
+            <div id="q7Feedback" class="feedback-slot"></div>
+        </div>
+
+        <div class="question-block">
+            <h3><span id="markImg8"></span> 8. Which of these states border the Pacific Ocean?</h3>
+            <input type="checkbox" id="oregon"> <label for="oregon">Oregon</label><br>
+            <input type="checkbox" id="washington"> <label for="washington">Washington</label><br>
+            <input type="checkbox" id="texas"> <label for="texas">Texas</label>
+            <div id="q8Feedback" class="feedback-slot"></div>
+        </div>
+
+        <div class="question-block">
+            <h3><span id="markImg9"></span> 9. What is the largest state by land area?</h3>
+            <input type="text" id="q9" class="form-control w-50">
+            <div id="q9Feedback" class="feedback-slot"></div>
+        </div>
+
+        <div class="question-block">
+            <h3><span id="markImg10"></span> 10. What is the lowest point in North America?</h3>
+            <select id="q10" class="form-select w-50">
+                <option value="">Select One</option>
+                <option value="dv">Death Valley</option>
+                <option value="cc">Casper, WY</option>
+            </select>
+            <div id="q10Feedback" class="feedback-slot"></div>
+        </div>
+
+        <div id="validationFdbk" class="text-center"></div>
+        
+        <div class="quiz-actions mt-4">
+            <button class="btn btn-primary btn-lg"> Submit Quiz </button>
+        </div>
+
+        <div class="text-center mt-4">
+            <h2 id="totalScore"></h2>
+            <h3 id="congratsMsg" class="text-success"></h3>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
