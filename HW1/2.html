@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Blog Navigation</h1>
+    <nav>
+        <div class="nav-section">
+            <p>Linux</p>
+            <a href="1.html">1</a>
+            <a href="2.html">2</a>
+        </div>
+        <div class="nav-section">
+            <p>DB</p>
+            <a href="3.html">3</a>
+            <a href="4.html">4</a>
+        </div>
+    </nav>
+</header>
+    <hr>
+<main>
+<article class="blog-post">
+    <header class="post-header">
+        <h2>Cache Lines in Linux</h2>
+        <p class="post-meta">Published on <time datetime="2026-03-09">March 9, 2026</time> by Perez</p>
+    </header>
+<div class="post-content">
+    <p>
+        To get the most out of a high-performance system like Linux Mint, it helps to understand the hardware layer beneath it. At the heart of CPU performance lies the <strong>cache line</strong>, typically 64 bytes in size. This is the smallest unit of data that the CPU can fetch from main memory (RAM) into its high-speed cache. When your processor needs a piece of information, it doesn't just grab a single byte; it pulls an entire cache line to ensure that subsequent, related instructions are already waiting in the fast lane, minimizing the latency that often bottlenecks system performance. 
+    </p>
+    <p>
+        On a Linux system, how your applications interact with these cache lines can significantly impact execution speed. Developers often optimize code through a process called <em>cache alignment</em>, ensuring that frequently accessed data structures fall neatly within these 64-byte boundaries. When data is properly aligned, the CPU avoids the "cache miss" penalty, the time-consuming wait for data to be fetched from slower RAM. Understanding these hardware fundamentals is a powerful step for anyone looking to transition from a casual Linux user to a power user or systems programmer. 
+    </p>
+    
+    <p>
+        By highlighting how extra pointers in a doubly linked list can reduce data density and lead to unnecessary cache evictions, the video emphasizes the importance of selecting efficient data structures to minimize "cache misses" and optimize execution speed.
+    </p>
+
+    <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/dYhvbDULJvc" 
+        title="YouTube video player" 
+        style="border: none;"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+    </iframe>
+</div>
+    <footer class="post-footer">
+        <p>Tags: <a href="#">Computer Architecture</a>, <a href="#">CPU Performance</a></p>
+    </footer>
+</article>
+</main>
+    <footer>
+        <img src="https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/thumbnails/image/CSUMB-Round-Logo-for-Licensing-blue%20%281%29.jpg?itok=ycowXZjF" alt="CSUMB Logo" class="footer-logo">
+        <p>CST336 Internet Programming. &copy; 2026 Perez</p>
+    </footer>
+</body>
+</html>

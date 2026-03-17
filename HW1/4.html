@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Investigating Dynamic SQL</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Navigation</h1>
+        <nav>
+            <div class="nav-section">
+                <p>Linux</p>
+                <a href="1.html">1</a>
+                <a href="2.html">2</a>
+            </div>
+            <div class="nav-section">
+                <p>DB</p>
+                <a href="3.html">3</a>
+                <a href="4.html" class="active">4</a>
+            </div>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <article class="blog-post">
+            <header class="post-header">
+                <h2>Investigating Dynamic SQL</h2>
+                <p class="post-meta">Published on <time datetime="2026-03-09">March 9, 2026</time> by Perez</p>
+            </header>
+
+            <div class="post-content">
+                <p>The belief that "Dynamic SQL is slow" is a persistent myth, but it oversimplifies how database engines handle execution. Performance depends on whether the engine can reuse an existing execution plan. If the engine receives the exact same query text repeatedly, it can use the cached plan regardless of how the string was generated.</p>
+                
+                <p>Developers often misuse dynamic SQL by concatenating literal values (e.g., <code>WHERE id = 123</code>). This changes the query text every time, forcing the engine to "hard parse" and generate a new plan, creating significant overhead.</p>
+
+                <div class="code-block">
+                    <h3>Example: Parameterized Dynamic SQL</h3>
+                    <pre><code>
+-- GOOD: Parameterized query (Plan Reusable)
+DECLARE @sql NVARCHAR(MAX);
+SET @sql = N'SELECT * FROM Users WHERE ID = @ID';
+EXEC sp_executesql @sql, N'@ID INT', @ID = 123;
+                    </code></pre>
+                </div>
+
+                <p>By using bind variables, the database sees a consistent template, allowing for effective plan caching. This debunks the idea that dynamic SQL is inherently slow.</p>
+
+                <dl>
+                    <dt>Hard Parse</dt>
+                    <dd>The costly process where the database engine must generate a new execution plan from scratch.</dd>
+                    <dt>Bind Variables</dt>
+                    <dd>Placeholders in a SQL statement that represent values, allowing for plan reuse.</dd>
+                </dl>
+                
+            </div>
+
+            <footer class="post-footer">
+                <p>Tags: <a href="#">SQL</a>, <a href="#">Database</a></p>
+            </footer>
+        </article>
+    </main>
+    <footer>
+        <img src="https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/thumbnails/image/CSUMB-Round-Logo-for-Licensing-blue%20%281%29.jpg?itok=ycowXZjF" alt="CSUMB Logo" class="footer-logo">
+        <p>CST336 Internet Programming. &copy; 2026 Perez</p>
+    </footer>
+</body>
+</html>

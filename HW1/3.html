@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Blog Navigation</h1>
+    <nav>
+        <div class="nav-section">
+            <p>Linux</p>
+            <a href="1.html">1</a>
+            <a href="2.html">2</a>
+        </div>
+        <div class="nav-section">
+            <p>DB</p>
+            <a href="3.html">3</a>
+            <a href="4.html">4</a>
+        </div>
+    </nav>
+</header>
+    <hr>
+<main>
+    <article class="blog-post">
+        <header class="post-header">
+            <h2>Pool Sizing</h2>
+            <p>Configuring database connection pools is often misunderstood, with many developers mistakenly believing that a larger pool leads to better performance.</p>
+            <p class="post-meta">Published on <time datetime="2026-03-09">March 9, 2026</time> by Perez</p>
+        </header>
+<div class="post-content">
+        <p>
+Large pools often degrade performance due to increased context switching and overhead. The core principle of efficient connection pooling is "less is more," as excessive threads beyond the available CPU cores force the operating system to spend time managing thread states rather than executing database transactions.
+        </p>
+        <p>
+Performance is largely constrained by hardware resources: CPU, disk, and network. While a single CPU core is theoretically most efficient when handling a number of threads equal to its core count, blocking I/O operations (such as disk seek times or network latency) mean that having slightly more connections than cores can improve throughput. However, modern technologies like SSDs reduce I/O wait times, which actually pushes the optimal connection count closer to the physical core count, contradicting the common impulse to increase pool sizes on faster hardware.
+        </p>
+        <p>
+A well-regarded formula for calculating an optimal starting point is connections = ((core_count * 2) + effective_spindle_count). For example, on a 4-core server with one hard disk, a pool size of 10 is usually sufficient to handle thousands of users. If performance begins to plateau or degrade during load testing, it is often a signal that the pool size is too high, causing the database and application to fight for resources rather than processing queries efficiently.
+        </p>
+        <p>
+The primary goal is to maintain a small pool where application threads are naturally saturated while waiting for available connections. If you have thousands of front-end users, the connection pool itself should only ever consist of a few dozen connections at most. The remaining application threads should simply wait in a queue for a connection to become available, ensuring that the database is never overwhelmed by more concurrent requests than it is capable of processing.
+        </p>
+        <p>
+Finally, developers must be wary of "pool-locking," a scenario where application-level deadlocks occur because threads require more connections than are available. While increasing the pool size can sometimes bypass these lockups, it is usually a sign of poor application design. Instead of enlarging the pool, developers should calculate the minimum required connections to avoid deadlock or use a Java Transaction Manager (JTA) to manage connections more effectively, keeping the pool size as small and performant as possible.
+        </p>
+</div>
+        <footer class="post-footer">
+            <p>Tags: <a href="#">Pool-locking</a>, <a href="#">Database</a></p>
+        </footer>
+    </article>
+</main>
+    <footer>
+        <img src="https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/thumbnails/image/CSUMB-Round-Logo-for-Licensing-blue%20%281%29.jpg?itok=ycowXZjF" alt="CSUMB Logo" class="footer-logo">
+        <p>CST336 Internet Programming. &copy; 2026 Perez</p>
+    </footer>
+</body>
+</html>

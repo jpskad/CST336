@@ -1,0 +1,91 @@
+/* Basic Body Styling */
+body {
+    background-color: #000000; /* Black background */
+    color: #bebebe;           /* Gray text */
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Centering Semantic Containers */
+header, nav, main, footer, #content {
+    text-align: center;
+}
+
+/* Navigation Styling */
+nav {
+    padding: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    font-size: 1.2em;
+}
+
+/* Pseudo-class for hover effect */
+nav a:hover {
+    background-color: #efb21e; /* Gold */
+    color: #002649;            /* Blue */
+    border-radius: 5px;
+}
+
+/* Rule to make the current page link stand out */
+.active {
+    font-weight: bold;
+    border-bottom: 3px solid #efb21e;
+}
+
+/* Flexbox for Home Page Side-by-Side */
+main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 50px;
+}
+
+/* Table and List Styling */
+table {
+    margin: 0 auto; /* Centering block element */
+    border-collapse: collapse;
+    font-size: 1.3em;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #444;
+}
+
+#table-header {
+    background-color: #002649; /* Dark Blue */
+    color: white;
+}
+
+.table-row {
+    background-color: #1a1a1a;
+}
+
+ul {
+    margin: 20px auto;
+    width: 300px; /* center a list block */
+    text-align: left;
+}
+
+.hobby-style {
+    color: #efb21e;
+    font-weight: bold;
+}
+
+footer {
+    font-size: 0.75rem; /* Smaller font */
+    color: #888888;    /* Different color from home content */
+    padding: 30px;
+    border-top: 1px solid #333;
+}
+
+.footer-logo {
+    width: 50px;  
+    height: auto; 
+
+}
+
