@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-main: #2d3436;
+    --primary: #6c5ce7; 
+    --secondary: #a29bfe;
+    --success: #00b894;
+    --error: #d63031;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-main);
+    padding-bottom: 50px;
+}
+
+.assignment-main {
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+/* Quiz Container */
+.quiz-shell {
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: 20px 20px 60px #d1d9e6, -20px -20px 60px #ffffff;
+    padding: 40px;
+    border: none;
+}
+
+.quiz-title {
+    color: var(--primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 15px;
+}
+
+/* Question Styling */
+.question-block {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    transition: transform 0.2s ease;
+    border-left: 5px solid transparent;
+}
+
+.question-block h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Customizing Bootstrap Inputs */
+.form-control, .form-select {
+    background: var(--bg-color);
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.form-control:focus {
+    box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff;
+    background: var(--bg-color);
+}
+
+/* Feedback Styling */
+.feedback-slot {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* Submit Button */
+.btn-primary {
+    background: var(--primary);
+    border: none;
+    border-radius: 12px;
+    padding: 15px 40px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+}
+
+/* Score Display */
+#totalScore {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+#validationFdbk:not(:empty) {
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
