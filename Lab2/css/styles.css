@@ -1,0 +1,60 @@
+/* General Layout */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    padding: 50px;
+}
+
+header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+#main {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: inline-block;
+}
+
+/* Typography & Colors */
+h1 { color: #2c3e50; font-size: 2.5rem; }
+h2 { font-size: 1.1rem; color: #7f8c8d; }
+
+#feedback {
+    margin: 20px 0;
+    font-weight: bold;
+    min-height: 24px;
+}
+
+.error { color: #e74c3c; font-size: 0.9rem; }
+.loss { color: red; text-transform: uppercase; }
+.win { color: #27ae60; }
+
+/* Interactive Elements */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#guessBtn { background-color: #4877ae; color: white; }
+#resetBtn { background-color: #e74c3c; color: white; }
+#guessBtn:hover { background-color: #0056b3; }
+
+#playerGuess {
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    outline: none;
+}
