@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="assignment-main">
+    <div class="container">
+        <div class="quiz-shell mx-auto">
+            <h1 class="quiz-title text-center">Sign Up</h1>
+
+            <form id="signupForm" action="welcome.html" method="GET" class="needs-validation">
+                
+                <div class="row mb-3">
+                    <div class="col">
+                        <label class="form-label">First Name</label>
+                        <input type="text" name="fName" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" name="lName" class="form-control">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label d-block">Gender</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="m">
+                        <label class="form-check-label">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="f">
+                        <label class="form-check-label">Female</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Zip Code</label>
+                    <input type="text" id="zip" name="zip" class="form-control">
+                    <div id="zipError" class="feedback-slot"></div>
+                    <small class="text-muted">
+                        City: <span id="city"></span> | 
+                        Lat: <span id="lat"></span> | 
+                        Lon: <span id="lon"></span>
+                    </small>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <label class="form-label">State</label>
+                        <select id="state" name="state" class="form-select">
+                        <option value="">Select State</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">County</label>
+                        <select id="county" name="county" class="form-select">
+                        <option value="">Select County</option>
+                        </select>                    
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Desired Username</label>
+                    <input type="text" id="username" name="username" class="form-control">
+                    <div id="usernameError" class="feedback-slot"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" id="pwd" name="password" class="form-control">
+                    <div id="suggestedPwd" class="text-muted small mt-1"></div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Type Password Again</label>
+                    <input type="password" id="pwdAgain" class="form-control">
+                    <div id="passwordError" class="feedback-slot text-danger"></div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary px-5">Sign up!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
